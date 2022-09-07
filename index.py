@@ -4,13 +4,13 @@ clients = []
 id_accumulator = 0
 
 class Client():
-  def init_register(self, client_id, name, birth, phone, email):
+  def __init__(self, client_id, name, birth, phone, email):
     self.client_id = client_id
     self.name = name
     self.birth = birth
     self.phone = phone
     self.email = email
-
+    self.categories = []
   def print_self(self, arr):
     properties = []
 
@@ -20,29 +20,28 @@ class Client():
 
     print(properties)
 
-
 def menu():
   possible_inputs = [1, 2, 3, 4]  
 
   option = int(input('''
-Para iniciar o sistema, escolha uma das opções abaixo:
+Escolha uma das opções abaixo:
 
-[1] - Cadastrar cliente
-[2] - Consultar Clientes
-[3] - Editar Cliente
-[4] - Sair do programa
+[1] - Cadastrar um novo Cliente
+[2] - Consultar um cliente pelo id
+[3] - Sair do programa
 
 '''))
 
   res = option in possible_inputs
 
   if not res:
-    print("Escolha inválida, digite uma opção válida")
+    print('''
+Escolha inválida, digite uma opção válida
+----------------------------------------------------------''')
     menu()
 
   return option
 
-   
 def init_register():
   global id_accumulator
   id_accumulator += 1
@@ -65,6 +64,8 @@ def category_menu(client):
 def choose_category(): 
   possible_inputs = [1, 2, 3, 4, 5]  
   category = int(input('''
+----------------------------------------------------------
+
 Escolha a categoria do novo cliente
 
 [1] - Funcionários
@@ -82,7 +83,7 @@ Escolha a categoria do novo cliente
     choose_category()
 
   return category
-  
+
 def print_category_att(client, category):
   if category == 1:
     print("Nada")
@@ -108,39 +109,41 @@ def choose_category_string(category):
 
   return switcher.get(category)
 
-def category_questions(category):
+def category_questions(category, client):
   if category == 4:
-      return atendidos_questions()
+      return atendidos_questions(client)
 
-def atendidos_questions():
+def atendidos_questions(client):
   client_cpf = input('Digite o CPF do cliente: ')
   client_rg = input('Digite o RG do cliente: ')
   client_family_income = input('Digite a renda familiar do cliente: ')
 
-  return (client_cpf, client_rg, client_family_income)
+  setattr(client, "cpf", client_cpf)
+  setattr(client, "rg", client_rg)
+  setattr(client, "family_income", client_family_income)
 
 def register_client():
-
   client_id, client_name, client_birth, client_phone, client_email = init_register()
+
+  client = Client(client_id, client_name, client_birth, client_phone, client_email)
   
-  client = {
-    "id": client_id,
-    "client_name": client_name
-  }
-
-  setattr(client, "test", 1)
-
+  #  Escolher a categoria
+  category = category_menu(client)
+  
   clients.append(client)
-  
-  # # Escolher a categoria
-  # category = choose_category()
 
-  # client_category = choose_category_string(category)
-  
-  
-  # # clients.append(client_data)
+  print("----------------------------------------------------------")
+  print("")
+  print("")
+  print("")
 
-  # print(getattr(clients[0], "aaa"))
+  print("Id: ", client.client_id)
+  print("Nome: ", client.name)
+  print("Data de Nascimento: ", client.birth)
+  print("Telefone: ", client.phone)
+  print("Email: ", client.email)
+
+  print_category_att(client, category)
 
   print(clients)
   print('Cliente adicionado com sucesso')
@@ -154,7 +157,7 @@ def start():
       register_client()
     if option == 2 :
       print("Salveee2")
-    if option == 4 :
+    if option == 3 :
       break
 
 start()
