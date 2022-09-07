@@ -83,6 +83,20 @@ Escolha a categoria do novo cliente
 
   return category
   
+def print_category_att(client, category):
+  if category == 1:
+    print("Nada")
+  if category == 2:
+    print("Nada")
+  if category == 3:
+    print("Nada")
+  if category == 4:
+    print("CPF: ", client.cpf)
+    print("RG: ", client.rg)
+    print("Renda familiar: ", client.family_income)
+  if category == 5:
+    print("Nada")
+
 def choose_category_string(category):
   switcher = {
         1:'Funcionários',
