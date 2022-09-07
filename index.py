@@ -54,6 +54,14 @@ def init_register():
   
   return (client_id, client_name, client_birth, client_phone, client_email)
 
+def category_menu(client):
+  #  Escolher a categoria
+  category = choose_category()
+  client_category_string = choose_category_string(category)
+  client.categories.append(client_category_string)
+  category_questions(category, client)
+  return category
+
 def choose_category(): 
   possible_inputs = [1, 2, 3, 4, 5]  
   category = int(input('''
