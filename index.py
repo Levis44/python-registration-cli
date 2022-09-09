@@ -156,7 +156,7 @@ def start():
     if option == 1 :
       register_client()
     if option == 2 :
-      print("Salveee2")
+      print("Salveee1")
     if option == 3 :
       break
 
