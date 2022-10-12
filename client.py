@@ -15,6 +15,13 @@ class Client():
     self.categories = []
   
   def categoryQuestions(self, category):
+    if category == 2:
+      client_available_day, client_available_hour, client_second_phone = menus.volunteersMenu()
+
+      self.client_available_day = client_available_day
+      self.client_available_hour = client_available_hour
+      self.client_second_phone = client_second_phone
+
     if category == 3:
       client_donation_amount, client_recursive_donation, client_project_donation = menus.donorsMenu()
       

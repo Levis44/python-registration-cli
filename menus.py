@@ -36,6 +36,13 @@ Escolha a categoria do novo cliente
 
   return category
 
+def volunteersMenu():
+  client_available_day = input('Digite o dia da semana que você estaria disponível para participar de eventos: ')
+  client_available_hour = input('Digite o melhor horário que você poderia participar: ')
+  client_second_phone = input('Digite um outro telefone para contato: ')
+
+  return (client_available_day, client_available_hour, client_second_phone)
+
 def donorsMenu():
   client_donation_amount = input('Digite a quantia de dinheiro que o cliente irá doar: ')
   client_recursive_donation = input('O cliente irá doar todos os meses? (SIM ou NÂO): ')
