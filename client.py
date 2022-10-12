@@ -15,9 +15,16 @@ class Client():
     self.categories = []
   
   def categoryQuestions(self, category):
+    if category == 3:
+      client_donation_amount, client_recursive_donation, client_project_donation = menus.doadoresMenu()
+      
+      self.client_donation_amount = client_donation_amount
+      self.client_recursive_donation = client_recursive_donation
+      self.client_project_donation = client_project_donation
+
     if category == 4:
       client_cpf, client_rg, client_family_income = menus.atendidosMenu()
-      
+
       self.client_cpf = client_cpf
       self.client_rg = client_rg
       self.client_family_income = client_family_income
