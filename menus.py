@@ -36,6 +36,13 @@ Escolha a categoria do novo cliente
 
   return category
 
+def employeesMenu():
+  client_salary = input('Digite o salário do empregado: ')
+  client_work_hours = input('Digite quantas horas o empregado irá trabalhar: ')
+  client_payment_day = input('Digite o dia do pagamento do empregado: ')
+
+  return (client_salary, client_work_hours, client_payment_day)
+
 def volunteersMenu():
   client_available_day = input('Digite o dia da semana que você estaria disponível para participar de eventos: ')
   client_available_hour = input('Digite o melhor horário que você poderia participar: ')
