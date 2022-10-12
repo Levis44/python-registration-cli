@@ -17,7 +17,15 @@ class Client():
   def categoryQuestions(self, category):
     if category == 4:
       client_cpf, client_rg, client_family_income = menus.atendidosMenu()
+      
       self.client_cpf = client_cpf
       self.client_rg = client_rg
       self.client_family_income = client_family_income
+
+    if category == 5:
+      client_visitor_name, client_visitor_phone, client_visitor_rg = menus.visitantesMenu()
+
+      self.client_visitor_name = client_visitor_name
+      self.client_visitor_phone = client_visitor_phone
+      self.client_visitor_rg = client_visitor_rg
 
