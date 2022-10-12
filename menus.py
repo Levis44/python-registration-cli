@@ -36,21 +36,21 @@ Escolha a categoria do novo cliente
 
   return category
 
-def doadoresMenu():
+def donorsMenu():
   client_donation_amount = input('Digite a quantia de dinheiro que o cliente irá doar: ')
   client_recursive_donation = input('O cliente irá doar todos os meses? (SIM ou NÂO): ')
   client_project_donation = input('Digite o projeto que o cliente irá doar: ')
 
   return (client_donation_amount, client_recursive_donation, client_project_donation)
 
-def atendidosMenu():
+def treatedsMenu():
   client_cpf = input('Digite o CPF do cliente: ')
   client_rg = input('Digite o RG do cliente: ')
   client_family_income = input('Digite a renda familiar do cliente: ')
 
   return (client_cpf, client_rg, client_family_income)
 
-def visitantesMenu():
+def visitorsMenu():
   client_visitor_name = input('Digite o nome de quem o cliente irá visitar: ')
   client_visitor_phone = input('Digite o telefone de quem o cliente irá visitar: ')
   client_visitor_rg = input('Digite o rg da pessoa que o cliente irá visitar: ')
