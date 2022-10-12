@@ -23,3 +23,16 @@ def handleRegister():
   clients.append(client)
 
   print(vars(client))
+
+def findClientById():
+  id = menus.getClientId()
+
+  for client in clients:
+    print(client.client_id)
+    print(id)
+    if client.client_id == id:
+      print(vars(client))
+    else:
+       print("Nenhum cliente com o id passado")
+
+ 

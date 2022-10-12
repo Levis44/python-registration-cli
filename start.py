@@ -8,7 +8,7 @@ def start():
     if option == 1:
       handlers.handleRegister()
     if option == 2:
-      print("Salveee2")
+      handlers.findClientById()
     if option == 3:
       break
 

@@ -11,6 +11,13 @@ Escolha uma das opções abaixo:
 
   return option
 
+def getClientId():
+  id = int(input('''
+Digite o id do cliente que deseja buscar:
+
+'''))
+  return id
+
 def initClientRegistration():
   client_name = input('Digite o nome do cliente: ')
   client_birth = input('Digite a data de nascimento do cliente: ')
@@ -18,7 +25,6 @@ def initClientRegistration():
   client_email = input('Digite o email do cliente: ')
   
   return (client_name, client_birth, client_phone, client_email)
-  
 
 def categoryMenu():
   category = int(input('''
