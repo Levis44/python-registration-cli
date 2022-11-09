@@ -33,6 +33,6 @@ def findClientById():
     if client.client_id == id:
       print(vars(client))
     else:
-       print("Nenhum cliente com o id inserido")
+       print("Nenhum cliente com o id fornecido")
 
  
